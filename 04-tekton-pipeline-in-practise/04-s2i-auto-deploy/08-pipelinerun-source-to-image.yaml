@@ -3,10 +3,13 @@ kind: PipelineRun
 metadata:
   name: s2i-buildid-run-00002
 spec:
-  serviceAccountName: default
-  serviceAccountNames:
-    - taskName: deploy-to-cluster
-      serviceAccountName: helloworld-admin
+  # serviceAccountName: default
+  # serviceAccountNames:
+  #   - taskName: deploy-to-cluster
+  #     serviceAccountName: helloworld-admin
+  taskRunSpecs: # 为特定task指定额外配置
+    - pipelineTaskName: deploy-to-cluster
+      taskServiceAccountName: helloworld-admin
   pipelineRef:
     name: source-to-image
   params:
