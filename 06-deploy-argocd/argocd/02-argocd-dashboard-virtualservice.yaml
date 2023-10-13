@@ -22,7 +22,7 @@ spec:
         name: https
         protocol: HTTPS
       tls:
-        mode: PASSTHROUGH
+        mode: PASSTHROUGH # TLS透传
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
