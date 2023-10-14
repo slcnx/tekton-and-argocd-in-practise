@@ -8,7 +8,7 @@ spec:
     - name: git-revision
       value: main
     - name: git-repo-url
-      value: http://code.gitlab.svc.cluster.local/root/spring-boot-helloworld.git
+      value: http://gitlab.gitlab.svc.cluster.local/root/spring-boot-helloworld.git
   workspaces:
     - name: source
       emptyDir: {}
@@ -21,7 +21,9 @@ spec:
     steps:
       - name: fetch-from-git-repo
         image: alpine/git:v2.36.1
-        script: git clone -v $(params.git-repo-url) $(workspaces.source.path)/source
+        script: |
+          sleep 86400
+          git clone -v $(params.git-repo-url) $(workspaces.source.path)/source
       - name: list-files
         image: alpine:3.16
         script: ls -la $(workspaces.source.path)/source
