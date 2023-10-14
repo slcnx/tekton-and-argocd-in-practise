@@ -6,6 +6,8 @@ spec:
   workspaces:
   - name: codebase
   params:
+  - name: target
+    type: string
   - name: git-url
     type: string
     description: Git repository url to be cloned
@@ -19,3 +21,5 @@ spec:
     params:
     - name: git-repo
       value: $(params.git-url)
+    - name: target
+      value: $(params.target)

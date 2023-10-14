@@ -42,7 +42,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: nfs-server
-          image: itsthenetwork/nfs-server-alpine:latest
+          image: registry.cn-hangzhou.aliyuncs.com/registry_mirrors/nfs-server-alpine:latest
           env:
             - name: SHARED_DIRECTORY
               value: "/exports"
