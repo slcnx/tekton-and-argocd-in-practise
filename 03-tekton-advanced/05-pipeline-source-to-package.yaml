@@ -34,7 +34,10 @@ spec:
             image: maven:3.8-openjdk-11-slim
             workingDir: $(workspaces.source.path)/source
             script: |
+              ls .
               mvn clean install
+              echo 'build finished'
+              ls .
         workspaces:
           - name: source
       workspaces:
@@ -44,7 +47,7 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: source-2-package-run-001
+  name: source-2-package-run-009
 spec:
   pipelineRef:
     name: source-2-package

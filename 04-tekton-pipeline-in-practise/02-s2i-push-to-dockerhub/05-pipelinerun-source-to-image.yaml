@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: s2i-image-push-run-00001
+  name: s2i-image-push-run-00002
 spec:
   pipelineRef:
     name: source-to-image
@@ -9,7 +9,7 @@ spec:
     - name: git-url
       value: https://gitee.com/mageedu/spring-boot-helloWorld.git
     - name: image-url
-      value: ikubernetes/spring-boot-helloworld
+      value: slcnx/spring-boot-helloworld
     - name: image-tag
       value: v0.9.1
   workspaces:
