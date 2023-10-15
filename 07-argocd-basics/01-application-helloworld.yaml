@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitee.com/mageedu/spring-boot-helloworld-deployment.git
+    repoURL: http://gitlab.gitlab.svc.cluster.local/root/spring-boot-helloworld-deployment.git
     targetRevision: HEAD
     path: deploy/kubernetes
   destination:
